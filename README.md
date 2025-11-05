@@ -28,11 +28,13 @@
 
 ### 🐍 Python
 - still learning
-
+- mainly tkinter and pygame
+my latest project is: [Primitive LAN chat](https://github.com/AlkivaAdiarsa/primitivelanchat)
 
 ### 👨‍💻 HTML
  - I can't really memorize text code very accurately, so i'm using bootstrap
- - my favourite line of code is: ``` (idk) ```
 
-### 👨‍💻 A bit of Javascript and Batch
+### 👨‍💻 A bit of Javascript
+What I made
+- JS [Auto Downloader](https://alkivaadiarsa.github.io/greenscratch.html)
   
