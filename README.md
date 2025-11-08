@@ -37,4 +37,6 @@ my latest project is: [Primitive LAN chat](https://github.com/AlkivaAdiarsa/prim
 ### 👨‍💻 A bit of Javascript
 What I made
 - JS [Auto Downloader](https://alkivaadiarsa.github.io/downloader.html)
+
+## I am building a real HTML page to replace this one. test it [here](test.html) 
   
