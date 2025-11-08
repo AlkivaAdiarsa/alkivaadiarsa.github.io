@@ -38,5 +38,5 @@ my latest project is: [Primitive LAN chat](https://github.com/AlkivaAdiarsa/prim
 What I made
 - JS [Auto Downloader](https://alkivaadiarsa.github.io/downloader.html)
 
-## I am building a real HTML page to replace this one. test it [here](test.html) 
+## I am building a real HTML page to replace this one. test it [here](https://alkivaadiarsa.github.io/test.html) 
   
