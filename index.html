@@ -8,6 +8,18 @@
 
     </script>
     <!javascript>
+    <!style>
+    <style>
+        .my-full-height-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+        }
+      
+    </style>
+    <!style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>alkiva's github page</title>
     <link rel="stylesheet" href="style.css">
@@ -17,12 +29,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
-    <div class="container h-100 text-center mb-4">
+    <div class="my-full-height-div vh-100 text-center mb-4">
       <h1 clss="text-white">Hi, I'm Alkiva</h1>
       <p class="text-white">I'm a high-school student who loves engineering.</p>
     </div>
 
-<nav id="scrollspy" class="navbar sticky top bg-body-tertiary px-3 mb-3">
+<nav id="scrollspy" class="navbar sticky-top bg-body-tertiary px-3 mb-3">
   <a class="navbar-brand" href="#"><img src="/Alkiva-Logo-Icon.svg" alt="Icon" width="32" height="32"></a>
   <ul class="nav nav-pills">
     <li class="nav-item">
@@ -32,7 +44,7 @@
       <a class="nav-link" href="#projects">Projects</a>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Coding</a>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#myscratch">Scratch</a></li>
         <li><a class="dropdown-item" href="#mypython">Python</a></li>
@@ -43,7 +55,7 @@
     </li>
   </ul>
 </nav>
-<div data-bs-spy="scroll" data-bs-target="#scrollspy" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2 mx-4" tabindex="0">
+<div data-bs-spy="scroll" data-bs-target="#scrollspy" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2 mx-4 mb-2" tabindex="0">
   <h2 id="about">For me, nothing is impossible</h2>
   <div class="card mb-4">
   <div class="card-body">
@@ -58,6 +70,7 @@
   <hr />
   <h4 id="projects">Projects</h3>
   <p>I code, and because of that, here's some projects I have created.</p>
+  <hr />
   <h4 id="myscratch">Scratch</h4>
   <div class="card mb-2">
     <div class="card-body">
@@ -87,13 +100,42 @@
       </div>
     </div>
   </div>
+  <hr />
   <h4 id="mypython">Python</h4>
   <p>TODO</p>
+  <hr />
   <h4 id="myjs">Javascript</h4>
   <p>TODO</p>
+  <hr />
   <h4 id"other">Other projects</h3>
   <p>TODO</p>
 </div>
+
+<footer class="text-center bg-body-tertiary">
+  <!-- Grid container -->
+  <div class="container pt-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Github -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="https://github.com/AlkivaAdiarsa/"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fa-solid fa-code"></i> Scratch</a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    this page is open source. help us improve 
+    <a class="text-body" href="https://github.com/AlkivaAdiarsa/alkivaadiarsa.github.io/tree/main/">here</a>
+  </div>
+  <!-- Copyright -->
+</footer>
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.2.0/mdb.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
