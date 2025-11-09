@@ -1,5 +1,25 @@
-body {
-  background-image: url("earthfromspace.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+:root[data-bs-theme='light'] {
+  --bg-image: url('tropical-island.jpg');
 }
+
+:root[data-bs-theme='dark'] {
+  --bg-image: url('earthfromspace.jpg');
+}
+
+body {
+  background-image: var(--bg-image);
+    /* Prevent the image from repeating */
+    background-repeat: no-repeat;
+    /* Center the background image */
+    background-position: center center;
+    /* Scale the background image to cover the entire element */
+    background-size: cover;
+    /* Make the background image fixed relative to the viewport */
+    background-attachment: fixed;
+}
+.my-full-height-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+        }
