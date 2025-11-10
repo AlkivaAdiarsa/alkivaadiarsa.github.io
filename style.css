@@ -3,7 +3,7 @@
 }
 
 :root[data-bs-theme='dark'] {
-  --bg-image: url('earthfromspace.jpg');
+  --bg-image: url('space.jpg');
 }
 
 body {
