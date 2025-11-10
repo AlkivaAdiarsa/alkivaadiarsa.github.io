@@ -19,6 +19,6 @@ body {
 }
 .my-full-height-div {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: end;
         }
