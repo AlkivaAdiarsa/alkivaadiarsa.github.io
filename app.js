@@ -10,4 +10,5 @@ function toggleTheme() {
     document.documentElement.setAttribute('data-bs-theme', theme);
   }
 
+document.addEventListener('DOMContentLoaded', setThemeByTime);
 
