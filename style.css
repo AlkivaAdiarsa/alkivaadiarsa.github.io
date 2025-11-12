@@ -22,3 +22,7 @@ body {
   justify-content: start;
   align-items: end;
         }
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #87CEEB;
+}
