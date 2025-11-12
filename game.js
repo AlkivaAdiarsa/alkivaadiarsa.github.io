@@ -33,14 +33,31 @@ function component(width, height, colour, x, y) {
    ctx.fillRect(this.x, this.y, this.width, this.height);
   }
   this.newPos = function() {
-    this.x += this.speedX
-    
+    this.x += this.speedX;
+    this.y += this.speedY;
+  }
 }
 //* update game area 
 function updateGameArea() {
   myGameArea.clear();
-  myGamePiece.x += 1;
+  myGamePiece.newPos();
   myGamePiece.Update();
 }
-
-//* to be continued
+//* movements
+function moveUp() {
+  myGamePiece.speedY -= 1;
+}
+function moveDown() {
+  myGamePiece.speedY += 1;
+}
+function moveLeft() {
+  myGamePiece.speedX -= 1;
+}
+function moveRight() {
+  myGamepIece.speedX += 1;
+}
+function stopMove() {
+  myGamePiece.speedX = 0;
+  myGamePiece.speedY = 0;
+}
+  
