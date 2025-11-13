@@ -2,7 +2,7 @@ var myGamePiece;
 //* setup game
 function startgame() {
   myGameArea.start();
-  myGamePiece = new component(30, 30, "red" 10, 120);
+  myGamePiece = new component(30, 30, "red", 10, 120);
 }
 //* game area
 var myGameArea = {
