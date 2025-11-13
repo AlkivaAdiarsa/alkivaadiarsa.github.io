@@ -1,9 +1,9 @@
 :root[data-bs-theme='light'] {
-  --bg-image: url('supertrees.jpg');
+  --bg-image: url('/assets/backgrounds/supertrees.jpg');
 }
 
 :root[data-bs-theme='dark'] {
-  --bg-image: url('lund.jpeg');
+  --bg-image: url('assets/backgrounds/lund.jpeg');
 }
 
 body {
