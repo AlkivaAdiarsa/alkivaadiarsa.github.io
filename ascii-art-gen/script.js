@@ -21,7 +21,9 @@ let sourceImage = null;
 // ===== CONFIG =====
 const HEIGHT_RATIO = 0.5;
 const CONTRAST = 1.3;
-const FACE_CHARS = "@#S%?*+;:,. ";
+const FACE_CHARS = "@80GCLft1i;:,. ";
+//  .,:;i1tfLCG08@
+
 
 // ===== THEME =====
 function updateOutputTheme() {
@@ -136,3 +138,4 @@ exportTxtBtn.addEventListener("click", () => {
 
 // Init
 updateOutputTheme();
+
