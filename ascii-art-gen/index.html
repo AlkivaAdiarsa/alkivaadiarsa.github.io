@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image to ASCII</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container-fluid p-4">
+  <h1>Image to ASCII Converter</h1>
+  <hr>
+
+  <div class="row g-4">
+    <!-- LEFT -->
+    <div class="col-md-4">
+      <input type="file" id="imageInput" class="form-control mb-3" accept="image/*">
+
+      <div id="controls">
+        <label class="w-100 mb-3">
+          Width
+          <input type="range" id="widthSlider" class="form-range" min="40" max="200" value="100">
+        </label>
+
+        <label class="w-100 mb-3">
+          Charset
+          <select id="charsetSelect" class="form-select">
+            <option value="@%#*+=-:. ">Default</option>
+            <option value="█▓▒░ ">Blocks</option>
+            <option value="M0xc:. ">Detailed Contrast</option>
+            <option value="MWNXK0Okxdolc:;,. ">Detailed</option>
+            <option value="@#S%?*+;:,. ">Classic</option>
+          </select>
+        </label>
+
+        <label class="w-100 mb-3">
+          Sampling
+          <input type="range" id="sampleSlider" class="form-range" min="1" max="5" value="3">
+        </label>
+
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="checkbox" id="faceMode">
+          <label class="form-check-label">Face mode</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="invertCheckbox">
+          <label class="form-check-label">Invert</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col-md-8">
+      <canvas id="canvas"></canvas>
+
+      <div class="card ascii-card dark" id="asciiCard">
+        <div class="card-body">
+          <h2>Generated ASCII Art</h2>
+
+          <div class="d-flex gap-2 mb-3 flex-wrap">
+            <button class="btn btn-sm btn-accent" id="copyTextBtn">Copy Text</button>
+            <button class="btn btn-sm btn-outline-warning" id="copyHtmlBtn">Copy HTML</button>
+            <button class="btn btn-sm btn-outline-warning" id="exportTxtBtn">Export TXT</button>
+          </div>
+
+          <pre id="asciiOutput">No file chosen</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
