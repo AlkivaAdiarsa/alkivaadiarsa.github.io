@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Neural Network Chess</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="panel-header">
+      <h1>Neural Network Chess</h1>
+      <p class="subtitle">Play or pit agents (Random, Minimax). Future: RL / AlphaZero / Stockfish integrations.</p>
+    </header>
+
+    <div class="panel">
+      <div id="controls" class="controls">
+        <label>White: <select id="whitePlayer"><option value="human">Human</option><option value="random">Random</option><option value="minimax">Minimax</option><option value="rl">RL</option><option value="neural">Neural</option><option value="alphazero">AlphaZero</option><option value="chatgpt">ChatGPT</option><option value="stockfish">Stockfish</option></select></label>
+        <label>Black: <select id="blackPlayer"><option value="human">Human</option><option value="random">Random</option><option value="minimax">Minimax</option><option value="rl">RL</option><option value="neural">Neural</option><option value="alphazero">AlphaZero</option><option value="stockfish">Stockfish</option></select></label>
+        <label>Minimax depth: <input id="minDepth" type="range" min="1" max="4" value="2" /></label>
+        <label>AZ rollouts: <input id="azRollouts" type="range" min="1" max="50" value="10" /></label>
+        <button id="newGame">New Game</button>
+        <button id="runTestsBtn">Run Tests</button>
+      </div>
+
+      <div class="board-wrap">
+        <canvas id="chessboard" width="480" height="480"></canvas>
+      </div>
+
+      <div id="status" aria-live="polite"></div>
+    </div>
+
+    <footer class="panel-footer">Built-in demo UI. Use DevTools console for API calls.</footer>
+  </div>
+
+  <script src="Chess_Manager/Chessboard.js"></script>
+  <script src="Chess_Manager/Chess_moves.js"></script>
+  <script src="Chess_Manager/special_action.js"></script>
+  <script src="Chess_Manager/chess_API.js"></script>
+  <script src="Chess_Manager/Ui.js"></script>
+  <script src="Chess_Manager/GameManager.js"></script>
+  <script src="tests.js"></script>
+  <script src="app.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

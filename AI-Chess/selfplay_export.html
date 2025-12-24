@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Self-play Export</title>
+  <style>body{font-family:Arial;padding:16px;background:#071020;color:#eee}button{padding:8px 12px;margin:6px}</style>
+</head>
+<body>
+  <h2>AlphaZero-style Self-Play Export (Browser)</h2>
+  <p>Run self-play games using the prototyped AlphaZero agent and download JSON game records.</p>
+  <label>Rollouts: <input id="rollouts" type="number" value="10" min="1" max="200"/></label>
+  <button id="gen">Generate Game</button>
+  <button id="download">Download Collected Games</button>
+  <pre id="log" style="height:300px;overflow:auto;background:#011; padding:8px;border-radius:6px"></pre>
+
+<script src="../Chess_Manager/Chessboard.js"></script>
+<script src="../Chess_Manager/Chess_moves.js"></script>
+<script src="../Chess_Manager/special_action.js"></script>
+<script src="../Chess_Manager/chess_API.js"></script>
+<script src="../Chess_Manager/GameManager.js"></script>
+<script>
+const log = document.getElementById('log');
+const games = [];
+const gen = document.getElementById('gen');
+const dl = document.getElementById('download');
+const roll = document.getElementById('rollouts');
+function lg(msg){ log.textContent = `${new Date().toISOString()} - ${msg}\n` + log.textContent; }
+
+gen.addEventListener('click', async ()=>{
+  const b = new Chessboard(document.createElement('canvas'));
+  const api = new ChessAPI(b);
+  const az = new AlphaZeroAgent(api, parseInt(roll.value,10));
+  const records = [];
+  b.initPosition(); b.draw();
+  let it = 0; while(it++ < 400){
+    const color = b.turn;
+    const move = az.pickMove(color);
+    if (!move) break;
+    api.movePiece(move.from, move.to);
+    // capture snapshot *after* move
+    records.push({fen: api.getFEN(), move: `${move.from}${move.to}`, player: color});
+    const state = api.special.detectGameState();
+    if (state.state === 'checkmate' || state.state === 'stalemate') break;
+  }
+  games.push(records);
+  lg(`Generated game ${games.length} (${records.length} plies)`);
+});
+
+dl.addEventListener('click', ()=>{
+  const blob = new Blob([JSON.stringify(games)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = `selfplay_${Date.now()}.json`; a.click(); URL.revokeObjectURL(url);
+});
+</script>
+</body>
+</html>

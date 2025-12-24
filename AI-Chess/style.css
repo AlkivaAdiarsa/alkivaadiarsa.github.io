@@ -1,0 +1,17 @@
+:root{ --bg:#0f1720; --panel:#0b1220; --accent:#2dd4bf; --muted:#94a3b8; --light:#e6eef6; --square-light:#1f2937; --square-dark:#0b1220 }
+body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; padding: 28px; background: linear-gradient(180deg,#071126,#071020); color: var(--light); display:flex; align-items:center; justify-content:center; min-height:100vh; }
+.container{ width: 760px; max-width:96vw; }
+.panel-header{ text-align:center; margin-bottom:12px; }
+.panel-header h1{ margin:0; font-size:26px; letter-spacing:0.6px; }
+.panel-header .subtitle{ margin:4px 0 0; color:var(--muted); font-size:13px }
+.panel{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:14px; padding:14px; border:1px solid rgba(255,255,255,0.04); box-shadow: 0 10px 30px rgba(2,6,23,0.7); }
+.controls{ display:flex; gap:12px; align-items:center; margin-bottom:12px; justify-content:center; flex-wrap:wrap }
+.controls label{ color:var(--muted); font-size:13px; display:flex; gap:6px; align-items:center }
+select,input[type=range]{ background:transparent; color:var(--light); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:8px; }
+button{ background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); color:var(--light); border:1px solid rgba(255,255,255,0.06); padding:8px 12px; border-radius:10px; cursor:pointer; }
+.board-wrap{ display:flex; align-items:center; justify-content:center; padding:10px 0; }
+canvas { border-radius:10px; display:block; box-shadow: 0 6px 30px rgba(2,6,23,0.8); background: linear-gradient(180deg,#111827,#071020); }
+#status { margin-top: 8px; color:var(--muted); text-align:center; }
+.square-highlight { background: rgba(45,212,191,0.12); }
+.selected-highlight { outline: 2px solid rgba(99,102,241,0.6); }
+.panel-footer{ margin-top:8px; text-align:center; color:var(--muted); font-size:13px }
