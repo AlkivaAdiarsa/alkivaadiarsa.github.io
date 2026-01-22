@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="https://alkivaadiarsa.github.io/Alkiva-Logo-Icon.svg">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Algorithm Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/press-start-2p" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+
+  </head>
+  <body>
+    <div class="text-center py-3">
+    <h1 style="font-size: 80px; font-family:'Press Start 2P';">Algorithms!</h1>
+    <p>Algorithms are the backbone of modern technology. but what is an algorithm?</p>
+
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <div class="card justify-content-end" style="width: 18rem;">
+        <div class="card-body text-start" >
+            <p>
+            <span class="h4" style="font-family:'Press Start 2P';">Algorithm</span><br>
+            <em>al·go·rithm</em> /ˈalɡəˌriT͟Həm/
+            <strong>noun</strong><br>
+            <em>plural</em>: algorithms<br><br>
+            <strong>Definition:</strong><br>
+            A process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer.<br>
+            <strong>Example sentence:</strong><br>
+            “a basic algorithm for division”<br>
+            <strong>Origin:</strong><br>
+            Late Middle English: from French <em>algorisme</em>, from medieval Latin <em>algorismus</em>, from the name of the mathematician al-Khwārizmī (9th century), who introduced Arabic numerals.<br>
+            <small>Oxford Languages Dictionary</small>
+            </p>
+        </div>
+    </div>
+    </div>
+    <div class="col-4 text-start">
+      <h2>In short...</h2>
+      <p>
+        An <strong>algorithm</strong> is a sequence of instructions to follow to get a specified outcome.<br>
+        <strong>For Example:</strong>
+        Making a sandwich
+    </p>
+    <ul>
+        <li>Get two slices of bread</li>
+        <li>Put cheese on one slice</li>
+        <li>Put some vegetables on top of it</li>
+        <li>Put some sauce on top of that</li>
+        <li>Put the other slice of bread on top</li>
+    </ul>
+    <p>
+        This is a simple algorithm for making a sandwich. Algorithms can be much more complex, especially in computer science where they can involve sorting data, searching for information, or performing calculations.<br><br>
+        <strong>scroll down</strong> for algorithm demos and examples
+    </p>
+    </div>
+  </div>
+
+
+    <div class="row justify-content-center my-4">
+    <div class="col-4 m-4">
+      <canvas class="Demo-Canvas" id="BinSearch" width="400" height="450"></canvas>
+    </div>
+    <div class="col-4">
+      <h3>Binary Search</h3>
+      <p>Binary search is an efficient algorithm for finding an item in a sorted list of items.</p>
+      <p class="d-inline-flex gap-1">
+        <a class="btn btn-primary" onclick="bin_search_demo_start()">
+    Play Demo
+  </a>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Code Here
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body" data-bs-theme="dark" style="max-height: 500px; overflow-y: auto;">
+    <p class="text-center text-white">Binary search works like finding a word in a dictionary:</p>
+    <ol class="text-center text-white">
+      <li>Look at the middle page.</li>
+      <li>If the word is there, found it!</li>
+      <li>If the word comes after, look in the second half.</li>
+      <li>If before, look in the first half.</li>
+      <li>Repeat until you find it or know it's not there.</li>
+    </ol>
+    <pre><code class="language-python text-start">def binary_search(arr, target):
+  low, high = 0, len(arr) - 1
+  while low <= high:
+      mid = (low + high) // 2
+      if arr[mid] == target:
+          return mid
+      elif arr[mid] < target:
+          low = mid + 1
+      else:
+          high = mid - 1
+  return -1</code></pre>
+  </div>
+</div>
+    </div>
+  </div>
+
+
+<div class="row justify-content-center my-4">
+    <div class="col-4">
+      <h3>Quick Sort</h3>
+      <p>Quick sort is a divide-and-conquer sorting algorithm that works by selecting a pivot element and partitioning the array around it.</p>
+      <p class="d-inline-flex gap-1">
+        <a class="btn btn-primary" onclick="quick_sort_demo_start()">
+    Play Demo
+  </a>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Code Here
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body" data-bs-theme="dark" style="max-height: 400px; overflow-y: auto;">
+    <p class="text-center text-white">Quick sort is like sorting cards:</p>
+    <ol class="text-center text-white">
+      <li>Pick a card as the "pivot".</li>
+      <li>Put cards smaller than pivot on left, bigger on right.</li>
+      <li>Do the same for the left and right groups.</li>
+      <li>Keep doing until everything is sorted.</li>
+    </ol>
+    <pre><code class="language-python text-start">
+def quicksort(arr):
+  if len(arr) <= 1:
+      return arr
+  pivot = arr[len(arr) // 2]
+  left = [x for x in arr if x < pivot]
+  middle = [x for x in arr if x == pivot]
+  right = [x for x in arr if x > pivot]
+  return quicksort(left) + middle + quicksort(right)
+    </code></pre>
+  </div>
+</div>
+    </div>
+    <div class="col-4 m-4">
+      <canvas class="Demo-Canvas" id="QuickSearch" width="500" height="450"></canvas>
+    </div>
+</div>
+
+
+<div class="row justify-content-center my-4">
+    <div class="col-4 m-4">
+      <canvas class="Demo-Canvas" id="DFS_Canvas" width="400" height="450"></canvas>
+    </div>
+    <div class="col-4">
+      <h3>DFS</h3>
+      <p>Depth-First Search (DFS) is an algorithm for pathfinding, traversing or searching tree or graph data structures.</p>
+      <p class="d-inline-flex gap-1">
+        <a class="btn btn-primary" onclick="dfs_demo_start()">
+    Play Demo
+  </a>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Code Here
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body" data-bs-theme="dark" style="max-height: 500px; overflow-y: auto;">
+    <p class="text-center text-white">Depth-First Search explores like exploring a cave:</p>
+    <ol class="text-center text-white">
+      <li>Start at one spot.</li>
+      <li>Go as deep as possible down one path.</li>
+      <li>If stuck, back up and try another path.</li>
+      <li>Mark places you've been so you don't go again.</li>
+    </ol>
+    <pre><code class="language-python text-start">def dfs(graph, node, visited=None):
+    if visited is None:
+        visited = set()
+    
+    if node not in visited:
+        print(node)
+        visited.add(node)
+        for neighbor in graph[node]:
+            dfs(graph, neighbor, visited)
+    return visited
+
+# Example Graph
+# graph = {'A': ['B', 'C'], 'B': ['D'], 'C': ['D'], 'D': []}</code></pre>
+  </div>
+</div>
+    </div>
+</div>
+
+    </div>
+    <h2 class="m-4 text-center">The previous algorithms are simple. here's what intermediate algorithms look like</h2>
+
+<div id="ascii-art-gen" class="m-4">
+
+<div class="container-fluid p-4">
+  <h1>Image to ASCII Converter</h1>
+  <hr>
+
+  <div class="row g-4">
+    <!-- LEFT -->
+    <div class="col-md-4">
+      <input type="file" id="imageInput" class="form-control mb-3" accept="image/*">
+
+      <div id="controls">
+        <label class="w-100 mb-3">
+          Width
+          <input type="range" id="widthSlider" class="form-range" min="40" max="200" value="100">
+        </label>
+
+        <label class="w-100 mb-3">
+          Charset
+          <select id="charsetSelect" class="form-select">
+            <option value="@%#*+=-:. ">Default</option>
+            <option value="█▓▒░ ">Blocks</option>
+            <option value="M0xc:. ">Detailed Contrast</option>
+            <option value="MWNXK0Okxdolc:;,. ">Detailed</option>
+            <option value="@#S%?*+;:,. ">Classic</option>
+          </select>
+        </label>
+
+        <label class="w-100 mb-3">
+          Sampling
+          <input type="range" id="sampleSlider" class="form-range" min="1" max="5" value="3">
+        </label>
+
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="checkbox" id="faceMode">
+          <label class="form-check-label">Face mode</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="invertCheckbox">
+          <label class="form-check-label">Invert</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col-md-8">
+
+      <div class="card ascii-card dark" id="asciiCard">
+        <div class="card-body">
+          <h2>Generated ASCII Art</h2>
+
+          <div class="d-flex gap-2 mb-3 flex-wrap">
+            <button class="btn btn-sm btn-accent" id="copyTextBtn">Copy Text</button>
+            <button class="btn btn-sm btn-outline-warning" id="copyHtmlBtn">Copy HTML</button>
+            <button class="btn btn-sm btn-outline-warning" id="exportTxtBtn">Export TXT</button>
+          </div>
+
+          <pre id="asciiOutput">No file chosen</pre>
+        </div>
+      </div>
+      <canvas id="ascii-demo-canvas"></canvas>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="container gap-4">
+<h3>Python Code</h3>
+  <p class="text-center">ASCII art turns pictures into text:</p>
+  <ol class="text-center">
+    <li>Take the picture and make it smaller.</li>
+    <li>Turn it to black and white.</li>
+    <li>For each part, pick a character like @ for dark, . for light.</li>
+    <li>Put them in rows to make text art.</li>
+  </ol>
+  <pre><code>from PIL import Image
+
+def image_to_ascii(image, width=100):
+    ascii_chars = "@%#*+=-:. "
+    aspect_ratio = image.height / image.width
+    new_height = int(aspect_ratio * width * 0.55)
+    img_resized = image.resize((width, new_height))
+    img_gray = img_resized.convert("L")
+    pixels = img_gray.getdata()
+    ascii_str = "".join(ascii_chars[pixel * len(ascii_chars) // 256] for pixel in pixels)
+    ascii_rows = [ascii_str[i:i+width] for i in range(0, len(ascii_str), width)]
+    return ascii_rows</code></pre>
+
+</div>
+<h2 class="text-center">Social Media also uses algorithm. here's how it works.</h2>
+<p class="text-center">click on any "video" to initialize the algorithm</p>
+<div class="align-items-center d-flex flex-column my-4">
+<iframe src="JS-Demo/socialmediaalgorithm.html" width="90%" height="600" border-radius="10px"  title="Social media algorithm"></iframe>
+</div>
+<div class="container text-center gap-4">
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Code Here
+  </button>
+</p>
+<div class="collapse" id="collapseExample" height="400" overflow-y="auto">
+  <div class="card card-body text-start" data-bs-theme="dark" style="max-height: 500px; overflow-y: auto;">
+    <h3 class="text-center text-white">Python Code</h3>
+    <p class="text-center text-white">Social media algorithm learns what you like:</p>
+    <ol class="text-center text-white">
+      <li>Start with showing random videos.</li>
+      <li>When you watch or like something, remember that category and tags.</li>
+      <li>Show more of those kinds next time.</li>
+      <li>Over time, it shows stuff you probably like more.</li>
+    </ol>
+  <pre><code class="language-python">import random
+
+# 1. SETUP: The Metadata
+CATEGORIES = ["Tech", "Gaming", "Music", "Food", "Travel"]
+TAGS = ["Lofi", "Tutorial", "Hardware", "Review", "Live", "Budget", "AI", "Retro"]
+
+# 2. STATE: The "User Profile" (Initial interest is equal)
+category_weights = {cat: 1.0 for cat in CATEGORIES}
+tag_weights = {tag: 1.0 for tag in TAGS}
+
+def generate_random_video():
+    """Simulates a video being uploaded to the platform."""
+    cat = random.choice(CATEGORIES)
+    # Pick 2 random tags
+    v_tags = random.sample(TAGS, 2)
+    return {
+        "title": f"{cat} Video {random.randint(100, 999)}",
+        "category": cat,
+        "tags": v_tags
+    }
+
+def get_algorithm_score(video):
+    """The Core Algorithm: Multi-factor ranking."""
+    c_score = category_weights[video["category"]]
+    t_score = sum(tag_weights[tag] for tag in video["tags"])
+    return (c_score * 1.5) + t_score  # Categories slightly more important
+
+def display_feed(limit=3):
+    """Generates a large pool but only shows the 'Recommended' top results."""
+    pool = [generate_random_video() for _ in range(20)]
+    # Sort the pool using our algorithm
+    recommended = sorted(pool, key=get_algorithm_score, reverse=True)
+    
+    print("\n--- YOUR RECOMMENDED FEED ---")
+    for i, v in enumerate(recommended[:limit]):
+        print(f"{i+1}. {v['title']} | Category: {v['category']} | Tags: {v['tags']}")
+    print("------------------------------")
+
+def simulate_click(category, tags):
+    """Update weights based on user engagement."""
+    category_weights[category] += 2.0
+    for t in tags:
+        tag_weights[t] += 1.5
+    
+    # Simulation of 'Interest Decay' (others lose priority over time)
+    for c in category_weights:
+        category_weights[c] *= 0.95
+    for t in tag_weights:
+        tag_weights[t] *= 0.95
+
+# --- EXECUTION SIMULATION ---
+
+# Step 1: Show initial random feed
+print("SYSTEM: New user detected. Showing baseline content.")
+display_feed()
+
+# Step 2: User clicks a 'Tech' video with '#Hardware'
+print("\n[USER CLICK]: Tech Video with #Hardware and #Review")
+simulate_click("Tech", ["Hardware", "Review"])
+
+# Step 3: Show feed again. 
+# It will now prioritize Tech, but also anything with Hardware/Review tags!
+print("\nSYSTEM: Recalculating weights...")
+display_feed()
+
+# Step 4: User clicks a 'Gaming' video with '#Hardware'
+# This is the 'Cross-over' - the user likes Hardware regardless of the category.
+print("\n[USER CLICK]: Gaming Video with #Hardware and #Retro")
+simulate_click("Gaming", ["Hardware", "Retro"])
+
+print("\nSYSTEM: Final Result (Algorithm now understands you like #Hardware everywhere)")
+display_feed()
+</code></pre>
+  </div>
+</div>
+</div>
+<div class="container m-4" id="outro" style="display: flex;justify-content: center;align-items: center;height:90vh">
+  <h3>
+    Algorithms are everywhere. they help us sort data, make decisions, and solve complex problems. understanding algorithms is key to navigating the modern world.
+  </h3>
+</div>
+<footer class="text-center bg-body-tertiary">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    this page is open source. help me improve 
+    <a class="text-body" href="https://github.com/AlkivaAdiarsa/alkivaadiarsa.github.io/tree/main/">here</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+    <script src="bg.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="JS-Demo/BinSearch.js"></script>
+    <script src="JS-Demo/QuickSearch.js"></script>
+    <script src="JS-Demo/DFS.js"></script>
+    <script src="JS-Demo/asciialg.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

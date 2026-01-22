@@ -1,0 +1,87 @@
+.Demo-Canvas {
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #f9f9f9;
+}
+.Procedural-bg-Canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* don’t block clicks */
+
+    display: block;
+    margin: 0;
+    padding: 0;
+    filter: blur(4px);
+
+
+}
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    /* Scoped styles: only affect elements inside #ascii-art-gen */
+    #ascii-art-gen {
+      font-family: monospace;
+      background: #111;
+      color: #0f0;
+      padding: 1rem;
+      border: 2px solid #444;
+      border-radius: 8px;
+      margin: 1rem auto;
+    }
+
+    #ascii-art-gen h2 {
+      color: #0ff;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    #ascii-art-gen textarea {
+      height: 120px;
+      background: #222;
+      color: #0f0;
+      border: 1px solid #555;
+      border-radius: 4px;
+      padding: 0.5rem;
+      resize: vertical;
+    }
+
+    #ascii-art-gen select,
+    #ascii-art-gen button {
+      background: #333;
+      color: #0ff;
+      border: 1px solid #555;
+      border-radius: 4px;
+      padding: 0.4rem 0.6rem;
+      margin: 0.3rem 0;
+      cursor: pointer;
+    }
+
+    #ascii-art-gen button:hover {
+      background: #444;
+    }
+
+    #ascii-art-gen .output {
+      margin-top: 1rem;
+      background: #000;
+      color: #0f0;
+      border: 1px solid #555;
+      border-radius: 4px;
+      padding: 0.5rem;
+      white-space: pre;
+      overflow-x: auto;
+    }
+#ascii-art-gen pre {
+  font-size: 8px;
+  line-height: 8px;
+  white-space: pre;
+  margin: 0;
+}
