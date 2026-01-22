@@ -10,6 +10,7 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
   >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -77,8 +78,40 @@
     </div>
   </div>
 </div>
+  <h3>Python Code</h3>
+  <pre><code>from PIL import Image
 
+def image_to_ascii(image, width=100):
+    ascii_chars = "@%#*+=-:. "
+    aspect_ratio = image.height / image.width
+    new_height = int(aspect_ratio * width * 0.55)
+    img_resized = image.resize((width, new_height))
+    img_gray = img_resized.convert("L")
+    pixels = img_gray.getdata()
+    ascii_str = "".join(ascii_chars[pixel * len(ascii_chars) // 256] for pixel in pixels)
+    ascii_rows = [ascii_str[i:i+width] for i in range(0, len(ascii_str), width)]
+    return ascii_rows</code></pre>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  
 <script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<!--
+from PIL import Image
+
+def image_to_ascii(image, width=100):
+    ascii_chars = "@%#*+=-:. "
+    aspect_ratio = image.height / image.width
+    new_height = int(aspect_ratio * width * 0.55)  # 0.55 compensates font aspect
+    img_resized = image.resize((width, new_height))
+    img_gray = img_resized.convert("L")
+    pixels = img_gray.getdata()
+    ascii_str = "".join(ascii_chars[pixel * len(ascii_chars) // 256] for pixel in pixels)
+    ascii_rows = [ascii_str[i:i+width] for i in range(0, len(ascii_str), width)]
+    return ascii_rows
+-->
+
