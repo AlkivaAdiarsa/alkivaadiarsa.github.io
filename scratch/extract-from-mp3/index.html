@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MP3 Volume Extractor — Visualizer Datatools</title>
+    <!-- MDB UI Kit CSS (includes Bootstrap) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="card mx-auto shadow-sm" style="max-width:900px;">
+        <div class="card-body">
+          <h3 class="card-title mb-3">MP3 Volume Extractor</h3>
+          <p class="text-muted">Upload an MP3, extract short‑term volume (RMS or dBFS), and download the results as a <code>.txt</code> file.</p>
+
+          <div class="row g-3 align-items-end">
+            <div class="col-md-6">
+              <label class="form-label">Audio file</label>
+              <input id="fileInput" type="file" accept=".mp3,audio/*" class="form-control" />
+              <div id="fileHelp" class="form-text">Decoded in the browser — no server upload.</div>
+            </div>
+
+            <div class="col-md-2">
+              <label class="form-label">FPS</label>
+              <input id="fpsInput" type="number" min="1" max="200" step="1" class="form-control" value="10" />
+              <div class="form-text">Frames per second (use instead of window/ms)</div>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Output</label>
+              <select id="outputType" class="form-select">
+                <option value="rms" selected>RMS (0–1)</option>
+                <option value="db">dBFS (decibels)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row g-3 mt-3">
+            <div class="col-md-6">
+              <label class="form-label">Colour source</label>
+              <select id="colorSource" class="form-select mb-2">
+                <option value="pitch" selected>Pitch (Hz → colour)</option>
+                <option value="amplitude">Amplitude (RMS → colour)</option>
+              </select>
+
+              <label class="form-label">Pitch range (Hz) — used when Colour source = Pitch</label>
+              <div class="d-flex gap-2 align-items-center">
+                <input id="pitchMin" type="number" min="20" step="1" class="form-control" value="80" />
+                <div class="ms-2 me-2">to</div>
+                <input id="pitchMax" type="number" min="100" step="10" class="form-control" value="1000" />
+              </div>
+
+              <hr />
+
+              <label class="form-label">Colour hue range (H in HSL)</label>
+              <div class="d-flex gap-2 align-items-center">
+                <input id="hueStart" type="range" min="0" max="360" value="200" class="form-range" />
+                <div class="text-nowrap ms-2">Start: <span id="hueStartValue">200</span>°</div>
+              </div>
+              <div class="d-flex gap-2 align-items-center mt-2">
+                <input id="hueEnd" type="range" min="0" max="360" value="40" class="form-range" />
+                <div class="text-nowrap ms-2">End: <span id="hueEndValue">40</span>°</div>
+              </div>
+              <div class="form-text">Colours are generated as hex from HSL (H interpolated between start/end). Saturation=80% Lightness=50% (fixed).</div>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Highlight large changes</label>
+              <div class="d-flex gap-2 align-items-center">
+                <input id="highlightColor" type="color" value="#ff2d55" class="form-control form-control-color" title="Highlight colour" />
+                <div class="ms-2 me-3">Threshold (delta): <strong id="highlightThresholdValue">0.20</strong></div>
+                <input id="highlightThreshold" type="range" min="0" max="1" step="0.01" value="0.2" class="form-range" />
+              </div>
+              <div class="form-text">When Colour source = Pitch, threshold compares normalized pitch changes; otherwise it compares normalized RMS changes.</div>
+            </div>
+          </div>
+
+          <div class="row g-3 mt-3">
+            <div class="col-12">
+              <label class="form-label">Colour preview (first frames)</label>
+              <div id="colorSwatches" class="mb-2"></div>
+              <pre id="colorPreview" class="border rounded p-2" style="height:120px; overflow:auto; background:#fff;"></pre>
+            </div>
+          </div>
+
+          <div class="mt-4 d-flex gap-2">
+            <button id="processBtn" class="btn btn-primary">Extract volume</button>
+            <a id="downloadBtn" class="btn btn-success disabled" href="#" download="volume.txt">Download volume .txt</a>
+            <a id="downloadColorsBtn" class="btn btn-warning disabled" href="#" download="colors.txt">Download colors .txt</a>
+            <button id="clearBtn" class="btn btn-outline-secondary">Clear</button>
+            <div id="spinner" class="ms-auto align-self-center" style="display:none;">
+              <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Processing...</span></div>
+              <small id="progressLabel" class="ms-2">0%</small>
+            </div>
+          </div>
+
+          <hr />
+
+          <div>
+            <h6>Preview (first 200 lines)</h6>
+            <pre id="outputPreview" class="border rounded p-3" style="height:280px; overflow:auto; background:#f8f9fa;">No data yet.</pre>
+          </div>
+
+          <div class="mt-3">
+            <small class="text-muted">Volume file: one numeric value per line (no timestamps). Colours file: hex color per line (one per frame). Highlight colour marks large frame‑to‑frame changes.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+    <script src="extractor.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

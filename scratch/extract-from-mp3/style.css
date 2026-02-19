@@ -1,0 +1,25 @@
+/* style.css — minimal tweaks for the extractor UI */
+body {
+  background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+  color: #222;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.card-title { color: #0b5ed7; }
+
+#outputPreview {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+}
+
+.btn.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* colour swatches for preview */
+#colorSwatches { display:flex; flex-wrap:wrap; gap:4px; padding:6px; background:#ffffff; border:1px solid #eef2f6; border-radius:6px; min-height:34px; }
+.color-swatch { width:18px; height:18px; border-radius:4px; box-shadow:0 0 0 1px rgba(0,0,0,0.06) inset; }
+
+#colorPreview { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace; font-size:12px; }
