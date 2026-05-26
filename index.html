@@ -29,10 +29,10 @@
             <button class="nav-link active rounded-5" id="home-tab">Home</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link rounded-5" id="profile-tab">Projects</button>
+            <button class="nav-link rounded-5" id="profile-tab" href="Projects">Projects</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link rounded-5" id="contact-tab">Others</button>
+            <button class="nav-link rounded-5" id="contact-tab" href="Others">Others</button>
         </li>
         </ul>
         </form>
@@ -181,7 +181,7 @@
 <script>
   $(document).ready(function() {
     // Syntax: $(destination).load("source_file.html #source_id");
-    $("#index-news").load("others.html #news-scroll > *");
+    $("#index-news").load("/Others/index.html #news-scroll > *");
   });
 </script>
   </body>
