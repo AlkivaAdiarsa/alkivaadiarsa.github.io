@@ -1,234 +1,172 @@
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
   <head>
-    <link rel="icon" type="image/x-icon" href="/Alkiva-Logo-Icon.svg">
     <meta charset="utf-8">
-    <!javascript>
-    <script>
-    </script>
-    <!javascript>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>alkiva's github page</title>
+    <link rel="icon" type="image/x-icon" href="https://alkivaadiarsa.github.io/Alkiva-Logo-Icon.svg">
+    <title>-Alkiva-</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.2.0/mdb.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://alkivaadiarsa.github.io/js-web-snowflakes/style.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
-
-<audio id="myAudio" autoplay loop hidden>
-    <source src="/assets/sounds/bgm1.mp3" type="audio/mpeg">
-    <source src="/assets/sounds/educational-presentation-tutorial-music-333729.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-<nav id="scrollspy" class="navbar sticky-top bg-body-tertiary px-3" style="--bs-bg-opacity: .85;">
-  <a class="navbar-brand" href="#"><img src="/Alkiva-Logo-Icon.svg" alt="Icon" width="32" height="32"></a>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link" href="#Home">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#about">About</a>
-    </li>
-    <li class="nav-item dropdown" data-bs-boundary="viewport">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Projects</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#myscratch">Scratch</a></li>
-        <li><a class="dropdown-item" href="#mypython">Python</a></li>
-        <li><a class="dropdown-item" href="#myjs">Javascript</a></li>
-        <li class="dropdown-divider"></li>
-        <li class="dropdown-item" onclick="toggleTheme()"><i class="bi bi-circle-half"></i> Toggle theme</li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-<div data-bs-spy="scroll" data-bs-target="#scrollspy" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2 mx-4 mb-2" tabindex="0">
-      <div id="Home" class="my-full-height-div text-start mb-4" style="height: 90vh">
-        <div class="card">
-          <div class="card-body">
-            <div class="row align-items-start">
-              <div class="col">
-               <img src="/alkivalogo.png" class="rounded-circle shadow-4" style="width: 150px;" alt="Avatar" />
-              </div>
-              <div class="col">
-                <h1>Hi, I'm Alkiva</h1>
-                <hr />
-                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stars" viewBox="0 0 16 16">
-                <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.73 1.73 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
-                </svg> I'm a junior high-school student who loves engineering.</p>
+<!--Navbar-->
+    <nav class="navbar sticky-top bg-body-tertiary" style="--bs-bg-opacity: 0;">
+    <div class="container-fluid">
+<style>
+  #brand-span {
+    transition: transform 0.2s ease;
+  }
+  #brand-span:hover {
+    transform: scale(1.05);
+  }
+</style>
+        <a id="brand-span" class="navbar-brand rounded-5 frosted-navbar gap-2 p-2" href="#"> 
+            <img src="https://alkivaadiarsa.github.io/Alkiva-Logo-Icon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"><span class="p-2">-Alkiva-</span></a>
+        <form class="d-flex">
+        <ul class="nav nav-pills nav-fill gap-2 p-1 small frosted-navbar rounded-5">
+            <li class="nav-item" role="presentation">
+            <button class="nav-link active rounded-5" id="home-tab">Home</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-5" id="profile-tab">Projects</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-5" id="contact-tab">Others</button>
+        </li>
+        </ul>
+        </form>
+    </div>
+    </nav>
+<!--Content-->
+    <div class="container align-items-center " style="color: #ffffff; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 4px 12px rgba(0, 0, 0, 0.7), 0 8px 24px rgba(0,0,0, 0.5);">
+      <h1>Hi</h1>
+      <p>I'm a junior high school student who loves trying new things</p>
+      <h3>Projects</h3>
+    </div>
+    <!--Carousel-->
+<div id="projectCarousel" class="carousel slide my-2" data-bs-ride="false" style="overflow: visible;">
+  <div class="carousel-inner" style="overflow: visible !important;">
+    
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row card-row">
+          
+          <div class="col-12 col-md-4 pool-card-col">
+            <div class="custom-frosted-card">
+              <div class="card-content">
+                <div class="image-container-wrapper">
+      <img src="https://img.itch.zone/aW1nLzI3MzIzMDU2LnBuZw==/315x250%23c/b6YMJ4.png" class="project-screenshot-image" alt="Project Screenshot">
+    </div>
+                <h3>Bad Game</h3>
+                <p>A notebook styled Flappy Bird clone but with my OC and pipes are monsters</p>
+                <a href="https://alkivadev.itch.io/do-not-play" class="fg-btn rounded-5">Play on itch.io</a>
               </div>
             </div>
-            <hr />
-        </div>
-        </div>
-    </div>
-  <hr />
-  <div id="about">
-  <div class="card mb-2" style="width: 18rem;">
-  <div class="card-body">
-    <h2>About Me</h2>
-  </div>
-  </div>
-  <div class="card mb-4">
-  <div class="card-body">
-  <p class="lead">my favourite phrase is "<mark>What If...</mark>"</p>
-  <p>I love to ask it to myself. It makes me find out that (almost) nothing is impossible.<br>"What If" is also why I do coding. sometimes, it makes me explore, try new things, and prove my theory</p>
-  <p class="lead">My favourite colour is <span class="badge rounded-pill" style="background-color: #6495ED; color: #ffffff;">Pastel Blue</span>.</p>
-  <p>(Nearly) Everyone loves that colour, so, why not? it's very cool (both of the meanings) and calm</p>
-  <p class="lead">I have two cats. why do <em>all</em> programmers love cats?</p>
-  </div>
-  </div>
-  <hr />
-  <!projects>
-  <div id="projects">
-  <div class="card mb-2">
-    <div class="card-body">
-      <div class="row justify-content-between">
-        <div class="col">
-  <h3>Projects</h3>
-        </div>
-        <div class="col text-end"><h3>
-          <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" href="https://github.com/AlkivaAdiarsa">
-           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-           </svg>
-           Github
-         </a>
-        </h3>
+          </div>
+
+          <div class="col-12 col-md-4 pool-card-col">
+            <div class="custom-frosted-card">
+              <div class="card-content">
+                <div class="image-container-wrapper">
+      <img src="https://cdn.rebrickable.com/media/thumbs/mocs/moc-254722/854062.png/1000x800.png?1779786450.1711137" class="project-screenshot-image" alt="Project Screenshot">
+    </div> 
+                <h3>Hypercar MOC</h3>
+                <p>A mod build of the Lego Porsche 963 with opening doors and canopy.</p>
+                <a href="https://reb.li/m/254722" class="fg-btn rounded-5">MOC on Rebrickable</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 pool-card-col">
+            <div class="custom-frosted-card">
+              <div class="card-content">
+                <div class="image-container-wrapper">
+      <img src="https://uploads.scratch.mit.edu/get_image/project/1281059449_292x219.png" class="project-screenshot-image" alt="Project Screenshot">
+    </div> 
+                <h3>Sound Visualizer</h3>
+                <p>combining Scratch, Python, and JS</p>
+                <a href="https://scratch.mit.edu/projects/1281059449/" class="fg-btn rounded-5 my-2">Play</a>
+    <a href="https://alkivaadiarsa.github.io/scratch/extract-from-mp3" class="fg-btn rounded-5">Try tool</a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
+
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row card-row">
+          
+          <div class="col-12 col-md-4 pool-card-col">
+            <div class="custom-frosted-card">
+              <div class="card-content">
+                <div class="image-container-wrapper">
+      <img src="https://cdn.rebrickable.com/media/thumbs/mocs/moc-214256/577407.png/999x797p.png?1752944498.1294525" class="project-screenshot-image" alt="Project Screenshot">
+    </div> 
+                <h3>F-15 MOC</h3>
+                <p>A mini model of the F-15 Eagle.</p>
+                <a href="https://reb.li/m/214256" class="fg-btn rounded-5">View on Rebrickable</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 col-md-4 pool-card-col">
+            <div class="custom-frosted-card">
+              <div class="card-content">
+                <div class="image-container-wrapper">
+      <img src="https://github.com/user-attachments/assets/301ca7b1-9578-4a65-99a3-22dcd9d8c594" class="project-screenshot-image" alt="Project Screenshot">
+    </div> 
+                <h3>Winter Snowfall</h3>
+                <p>add snowfall to your website in only 2 lines of code</p>
+                <a href="https://github.com/AlkivaAdiarsa/js-web-snowflakes" class="fg-btn my-2 rounded-5">On GitHub</a>
+                <a href="https://alkivaadiarsa.github.io/js-web-snowflakes" class="fg-btn rounded-5">See demo</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 col-md-4 pool-card-col">
+            <div class="custom-frosted-card">
+              <div class="card-content"> 
+                <div class="image-container-wrapper">
+      <img src="https://github.com/user-attachments/assets/cffd2486-8c97-42d2-9062-c5168800be2f" class="project-screenshot-image" alt="Project Screenshot">
+    </div> 
+                <h3>Algorithms</h3>
+                <p>Algorithms, examples, and uses, all in one page.</p>
+                <a href="https://alkivaadiarsa.github.io/algorithms/" class="fg-btn rounded-5">Open</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 
-<div class="row">
-  <div class="col-sm-6 mb-3 mb-sm-0">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Python-Projects <span class="badge rounded-pill text-bg-success">Repo</span></h5>
-        <p class="card-text">Smaller scale python projects.<br>mainly Pygame</p>
-        <a href="https://github.com/AlkivaAdiarsa/python-projects" class="btn btn-primary">On Github</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Alkivaadiarsa.github.io <span class="badge rounded-pill text-bg-primary">Site</span></h5>
-        <p class="card-text">this site, which is also my most polished webpage.<br>Experimentation with Javascript and HTML5.</p>
-        <a href="https://github.com/AlkivaAdiarsa/alkivaadiarsa.github.io/tree/main/" class="btn btn-primary">On Github</a>
-      </div>
-    </div>
-  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
-    
-</div>
-  </div>
-  <!projects>
-  <hr />
-  <div id="myscratch" class="card mb-2" style="width: 18rem;">
-    <div class="card-body">
-    <h4>
-    <a class="icon-link icon-link-hover" href="https://scratch.mit.edu/users/-Alkiva-">
-     Scratch
-     <svg xmlns="http://www.w3.org/2000/svg" class="bi" viewBox="0 0 16 16" aria-hidden="true">
-      <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-     </svg>
-    </a>
-    </h4>
-    </div>
-  </div>
-  <div class="card mb-4">
-    <div class="card-body">
-      <p><strong>Is it green or not?</strong></p>
-      <hr />
-      <div class="row align-items-start">
-        <div class="col">
-          <iframe src="https://turbowarp.org/1229517368/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
-        </div>
-        <div class="col">
-          <p><strong>100 scripts, 666 Blocks of code, 18 sprites, and 100 costumes</strong></p>
-          <p>The world has a LOT of environmental problems, but how do we slow it down? learn more about it in this project.</p>
-          <p>special thanks to:
-           <br>@_undrcl0k for telling me about the competition (he made a game too!)
-           <br>@kanzatanzila for being a competitor
-           <br>@griffpatch and @ZonxScratch for tutorials</p>
-          <div class="btn-group">
-           <a href="/greenscratch.html" class="btn btn-outline-primary">Play</a>
-           <a href="https://scratch.mit.edu/users/-Alkiva-" class="btn btn-outline-primary">Find me</a>
-         </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <hr />
-  <div id="mypython">
-  <div class="card mb-4" style="width: 18rem;">
-    <div class="card-body">
-  <h4>Python</h4>
-    </div>
-  </div>
+  <!-- news -->
+  <div class="container p-3">
+    <h3>News</h3>
+<div class="custom-frosted-card">
+  <div class="card-content">
+    <div class="scroll-box" id="index-news">
 
-<div class="card mb-3">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://github.com/user-attachments/assets/2834baa7-b927-4a11-b8c8-2605eae6b8fb" class="img-fluid rounded-start" alt="LAN chat">
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">LAN Internet chat</h5>
-        <p class="card-text">An internet chat application made using python.,<br> uses tkinter for GUI and socket for messaging.</p>
-        <a class="btn btn-primary mb-4" href="https://github.com/AlkivaAdiarsa/primitivelanchat" role="button">on Github</a>
-        <hr />
-        <p class="card-text"><small class="text-body-secondary">7 September 2025</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card text-bg-dark" data-bs-theme="dark">
-  <img src="https://github.com/user-attachments/assets/2f5454b8-d929-48b1-a85c-3e08ac69897a" class="card-img" alt="PyProj">
-  <div class="card-img-overlay">
-    <h5 class="card-title">Python-Projects</h5>
-    <p class="card-text">Smaller scale projects made using Python. <br> including a 2d flight engine made using pygame</p>
-    <p><small class="text-body-secondary">last edited: 24 October 2025</small></p>
-    <a href="https://github.com/AlkivaAdiarsa/python-projects" class="btn btn-primary">On Github</a>
-  </div>
-</div>
     
   </div>
-  <hr />
-  <div id="myjs">
-    <div class="card mb-4" style="width: 18rem;">
-      <div class="card-body">
-  <h4>Javascript</h4>
-      </div>
-    </div>
- 
-   <div class="card text-center">
-    <div class="card-body">
-      <div class="row">
-        <div class="col">
-          <div class="canvas-container" style="width: 31.25rem;">
-           <canvas id="myCanvas" width="480" height="320">
-           </canvas>
-         </div>
-        </div>
-       <div class="col">
-        <h5 class="card-title"><a href="/Games/Breakout">Breakout</a></h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Use the arrow keys to move the paddle and prevent the ball from falling! Play till end to get a surprise!</h6>
-        <p class="card-text">A game made using only Javascript. made using Mozzila's tutorial <a href="https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/">here</a></p>
-        <button class="button btn-outline-primary" id="runButton">Start game</button>
-      </div>
-    </div>
-  </div>
 </div>
-  </div>
-  <hr />
-</div>
-
+  </div> 
 <footer class="text-center bg-body-tertiary">
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
@@ -237,12 +175,14 @@
   </div>
   <!-- Copyright -->
 </footer>
-    <!--- scripts --->
-    <canvas id="snowflake"></canvas>
-    <script src="https://alkivaadiarsa.github.io/js-web-snowflakes/app.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.2.0/mdb.umd.min.js"></script>
-    <script src="/app.js"></script>
-    <script src="/game.js"></script>
+<!--Scripts-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Syntax: $(destination).load("source_file.html #source_id");
+    $("#index-news").load("others.html #news-scroll > *");
+  });
+</script>
   </body>
 </html>
