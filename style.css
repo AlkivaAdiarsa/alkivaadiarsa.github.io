@@ -1,13 +1,5 @@
-:root[data-bs-theme='light'] {
-  --bg-image: url('/assets/backgrounds/supertrees.jpg');
-}
-
-:root[data-bs-theme='dark'] {
-  --bg-image: url('assets/backgrounds/lund.jpeg');
-}
-
 body {
-  background-image: var(--bg-image);
+  background-image: url(https://alkivaadiarsa.github.io/assets/backgrounds/lund.jpeg);
     /* Prevent the image from repeating */
     background-repeat: no-repeat;
     /* Center the background image */
@@ -17,13 +9,240 @@ body {
     /* Make the background image fixed relative to the viewport */
     background-attachment: fixed;
 }
-.my-full-height-div {
+
+/* Apply this to the main container bar */
+.frosted-navbar {
+  /* A dark transparent tint (use rgba(255,255,255,0.2) instead if you want a light theme) */
+  background-color: rgba(15, 23, 42, 0.4) !important; 
+  
+  /* The core frosted glass effect */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  
+  /* A subtle border line helps define the capsule edge over chaotic backgrounds */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Style the active button item inside the frosted bar */
+.frosted-navbar .nav-link.active {
+  /* Make the active selection stand out with high contrast */
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Style the inactive text links so they look crisp on the blur */
+.frosted-navbar .nav-link {
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+/* Add a subtle visual hover feedback */
+.frosted-navbar .nav-link:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+/* Container holding the cards inside the slide */
+.carousel-item .d-flex {
+  /* Ensure the row matches the height of the tallest item inside it */
+  align-items: stretch; 
+  padding: 20px 0;
+  overflow: visible !important;
+}
+
+/* --- LAYOUT & HEIGHT EQUALIZATION --- */
+.card-row {
+  display: flex !important;
+  overflow: visible !important;
+  flex-wrap: wrap;
+  align-items: stretch; /* Forces all columns in the row to match the tallest one */
+}
+
+.pool-card-col {
   display: flex;
-  justify-content: start;
-  align-items: end;
-        }
-#myCanvas {
-    border:1px solid #d3d3d3;
-    background-color: #eeeeee;
-    display: block;
+  flex-direction: column;
+  overflow: visible !important;
+}
+
+/* --- THE FROSTED GLASS CARD --- */
+.custom-frosted-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  width: 100%;  
+  
+  /* FORCE UNIFORM HEIGHT ACROSS ALL SLIDES */
+  min-height: 510px; /* Adjust this number so your longest text fits comfortably */
+
+  /* Your existing frosted styles */
+  background: rgba(15, 23, 42, 0.45) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  transform-style: preserve-3d;
+  
+  /* CRITICAL: Ensure the card itself does NOT hide elements that expand outward */
+  overflow: visible !important;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: visible !important;
+}
+
+.card-content p {
+  flex-grow: 1; /* Swallows empty space so buttons line up at the bottom */
+  margin-bottom: 20px;
+  color: #cbd5e1;
+  overflow: visible !important;
+}
+
+/* --- BUTTON STYLING --- */
+.fg-btn {
+  display: block;
+  background-color: #ffffff00;
+  color: rgb(255, 255, 255);
+  border: 2px solid #ffffff;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.fg-btn:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+
+/* --- MOBILE RESPONSIVENESS HACK --- */
+/* If the screen width is less than 768px (Mobile), hide cards 2 and 3 in each slide */
+@media (max-width: 767.98px) {
+  .pool-card-col:not(:first-child) {
+    display: none !important;
+  }
+  .custom-frosted-card {
+    margin-bottom: 0;
+  }
+}
+/* Target both the Prev and Next icon shapes */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  /* 1. Force the icon image to turn bright white */
+  filter: invert(1) brightness(100%) drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.9)) !important;
+  
+  /* 2. Make them slightly larger so they are easier to click */
+  width: 2.5rem;
+  height: 2.5rem;
+  
+  transition: transform 0.2s ease;
+}
+
+/* Optional: Make the arrows grow slightly when hovered */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  transform: scale(1.15);
+}
+
+/* 1. The Wrapper Box now handles the rounded corners natively */
+.image-container-wrapper {
+  width: 100%;
+  height: 220px; 
+  margin-bottom: 24px;
+  perspective: 1000px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* FORCE ROUNDED CORNERS ONTO THE IMAGES INSIDE IT */
+  border-radius: 8px; 
+  
+  /* When the mouse is NOT hovering, hide anything outside these rounded corners */
+  overflow: visible; 
+}
+
+/* 2. When you hover over the card, turn off the restriction so the 3D pop-out works! */
+.custom-frosted-card:hover .image-container-wrapper {
+  overflow: visible !important;
+}
+
+/* 3. The Cleaned Image Tag */
+.project-screenshot-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  display: block;
+  
+  /* Remove border-radius from here so it doesn't clash with object-fit */
+  border-radius: 0; 
+
+  /* Pixel art rendering filters 
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+   image-rendering: crisp-edges; */
+
+  /* Transition controls */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease; 
+  transform: perspective(1000px) translateZ(0px) scale(1);
+  filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.2));
+  position: relative;
+}
+
+/* 4. Keep your hover breakout effect exactly the same */
+.custom-frosted-card:hover .project-screenshot-image {
+  transform: perspective(1000px) translateZ(40px) scale(1.12) translateY(-12px) rotateY(-4deg);
+  filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.65));
+  z-index: 999;
+}
+
+.pill-btn-white {
+  display: block;
+  width: 100%; /* Spans across the bottom of the card content */
+  background-color: #ffffff !important;
+  color: #0f172a !important; /* A dark slate/black color so the text is highly readable */
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px; /* Gives the text a clean, modern spacing track */
+  
+  /* A crisp drop shadow to make the pill shape pop off the frosted blur background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effects for the button */
+.pill-btn-white:hover {
+  background-color: #f8fafc !important; /* Slightly off-white hover tint */
+  color: #000000 !important;
+  
+  /* Pushes a deeper shadow and expands the button size slightly when hovered directly */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02); 
+}
+
+.scroll-box {
+  /* 1. Limit the height so it is forced to scroll when content exceeds this size */
+  max-height: 480px; 
+  
+  /* 2. Turn on vertical scrolling independently */
+  overflow-y: auto;  
+  
+  /* 3. Turn off horizontal scrolling so nothing accidentally slides sideways */
+  overflow-x: hidden; 
+  
+  /* Extra styling details */
+  padding-right: 8px; /* Gives space between your text and the scrollbar */
+  margin-bottom: 12px;
 }
